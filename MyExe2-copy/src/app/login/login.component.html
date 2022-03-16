@@ -1,0 +1,15 @@
+<h2>Welcome!</h2>
+<p>Integer Posuere erat a anate venenatis dapibus posuere velit aliquet.</p>
+
+<h2>{{title}}</h2>
+<form #myForm="ngForm" (ngSubmit)="inviaTemplateForm()" >
+    <label>Nome</label><br>
+    <input type="text" name="nome" [(ngModel)]="nome" #myNome="ngModel" required placeholder="username">  <br>
+    <label>Password</label><br>
+    <input type="number" name="pw" [(ngModel)]="pw" #myPw="ngModel" required>  
+    <button type="submit">Invia</button>
+</form>
+
+<div *ngIf="logged!=null">
+    <h4>Login Effettuato!</h4>
+</div>
