@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<p>Data di nascita: {{ miadata | date:'dd MMMM yyyy' | uppercase }}</p>
+<!-- Parametri con valori multipli: si separano i valori con i due punti.
+Nell'esempio la pipe di currency utilizza i parametri per la Valuta, il relativo Code e Min Int.Min decimal-Max decimal -->
+<p>{{testo | titlecase}}</p>
+
+<p>Compenso orario: {{ prezzo | currency:'EUR':'symbol':'1.2-3' }}</p>
+<p>Crescita: {{ guadagno | percent }}</p>
+<p>{{jsonobject |json}}</p>
+
+<p *ngFor="let o of object | keyvalue">{{ o.key }}: {{o.value}}</p>
+<p *ngFor="let m of map | keyvalue">{{ m.key }}: {{m.value}}</p>
+
+<p *ngFor="let l of lista | slice:0:1">{{l}}</p>
+
+<h2>Custom pipes</h2>
+<p>{{ stringa | myPipe:'Mio argomento alla pipe' }}</p>
+
+<ul>
+    <li *ngFor="let l of lista ">{{ l|myTranslator }}</li>
+</ul>
