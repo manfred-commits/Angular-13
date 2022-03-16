@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+<p>{{app_value}}</p>
+<button (click)="change()">Change Global</button>
+<hr>
+<div>
+    <app-parent-a [item_A]="app_value" (emittedItem)='onOutputParent($event)'></app-parent-a>
+    <app-parent-b [item_B]="app_value" (eventOtput)="onOutputParentB($event)"></app-parent-b>
+</div>
+<hr>
+
+
+<!-- <app-child [inputChild]='stringaParent' (outputChild)='onOutputParent($event)'></app-child> -->
