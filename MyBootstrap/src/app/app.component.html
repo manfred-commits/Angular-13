@@ -1,0 +1,97 @@
+{{title}}
+<div class="container">
+  <h1>{{title}}</h1>
+  <hr>
+  <div class="row">
+    <div class="col">
+      Col
+    </div>
+    <div class="col">
+      Col
+    </div>
+    <div class="col">
+      Col
+    </div>
+  </div>
+  <div class="row" style="margin-bottom: 16px;">
+    <div class="col">
+      Col
+    </div>
+    <div class="col">
+      Col
+    </div>
+    <div class="col">
+      Col
+    </div>
+  </div>
+</div>
+<ngb-accordion activeIds="ngb-panel-0" [closeOthers]="true" [animation]="true">
+  <ngb-panel title="Panel 1">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+      officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+      3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+      Nihil anim keffiyeh helvetica, aft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+      excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+      you probably haven't heard of them accusamus labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel title="Panel 2">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+      officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+      3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+      Nihil anim keffiyeh helvetica, aft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+      excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+      you probably haven't heard of them accusamus labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel title="Panel 3">
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+      officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+      3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+      Nihil anim keffiyeh helvetica, aft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+      excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+      you probably haven't heard of them accusamus labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+<ngb-alert type="danger" [dismissible]="true" >
+  <strong>Attenzione</strong> Qualcosa non va.
+</ngb-alert>
+
+
+<ngb-carousel *ngIf="images" [interval]="3000">
+
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[0]" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[1]" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Second slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img [src]="images[2]" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <h3>Third slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </div>
+  </ng-template>
+  
+</ngb-carousel>
+
+<ngb-datepicker></ngb-datepicker>
