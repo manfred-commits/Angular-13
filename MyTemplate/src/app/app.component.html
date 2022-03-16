@@ -1,0 +1,97 @@
+<h1>{{title}}</h1>
+
+<h2>Expressins</h2>
+<hr>
+
+<h3>Interpolazione</h3>
+
+<p>{{myObject.nome}} {{myObject.cognome}} {{myObject.eta}}</p>
+
+
+<!-- <img src="{{myImgUrl}}"> -->
+
+<!-- interpolazione complessa -->
+<p> 1 +1 +{{myVal()+myNum}}={{1+1+myVal()+myNum}}</p>
+<hr>
+<!-- Property Binding, forma alternativa all'interpolazione dal risultato identico -->
+<h3>Property Binding</h3>
+
+<!-- Utilizza una [proprietà] del tag HTML -->
+<p>1 +1 + myVal() + myNum= <span [innerHtml]="1+1+myVal()+myNum"></span></p>
+
+<!-- Forma alternativa utilizza bind-nomeProprietà -->
+<p>3*3 = <span bind-innerHtml="1+1+myVal()+myNum"></span></p>
+
+<h3>Template Reference Variable</h3>
+Dichiarazione della variabile di Template
+
+<!-- Riferimento alla variabile -->
+<input type="number" #myRef>
+
+<button (click)="mostraRef(myRef.value)">Mostra Value</button>
+
+<p #myPar>Testo del paragrafo</p>
+<button (click) = "mostraRef(myPar.innerHTML)">Mostra inner Html</button>
+
+<!-- necessita dell'import di Forms Module in module -->
+<h3>Two-way data binding</h3>
+<input type="text" [(ngModel)]="myModel">
+<button (click)="mostraModel()">click</button>
+
+<!-- Direttive -->
+<h2>Direttive</h2>
+<!-- scorciatoi grazie al quale possiamo 
+stampare nel template le caratteristiche dei nostri oggetti dell proprietà nei nostri  -->
+
+<!-- strutturali e di attributo -->
+
+<!-- strutturali cambiano la struttura -->
+<!-- attributo cambiano un elemento -->
+
+<!-- strutturali -->
+<h3>ngIf</h3>
+<input type="number" [(ngModel)]="myNum2">
+<p *ngIf="myNum2>1">Il valore dopio di {{myNum2}} è {{myNum*2}}</p>
+<p *ngIf="myNum2==2">Non posso moltiplicare questo numero<p>
+<!-- <p *ngIf="myNum2>2; else noMultiply">Non posso moltiplicare questo numero</p>
+<p #noMultiply> Non posso moltiplicare questo numero</p>
+ else 
+<ng-template #noMultiply>
+    <p>Non posso moltiplicare questo numero</p>
+</ng-template>
+<hr> -->
+
+
+<!-- Direttiva Strutturale ngIf: genera un blocco di elementi DOM in base alla valutazione di espressione booleana -->
+<h3>ngIf</h3>
+<input type="number" [(ngModel)]="myNum2" />
+<p *ngIf='myNum2>1'>Il valore doppio di {{myNum2}} è {{myNum2*2}}</p>
+<p *ngIf='myNum2<=0'>Non posso moltiplicare questo numero</p>
+<!-- A partire da Angular 4: else -->
+<p *ngIf='myNum2>0; else noMultiply'>Il valore doppio di {{myNum2}} &egrave; {{myNum2*2}}</p>
+<ng-template #noMultiply>
+    <p>Non posso moltiplicare questo numero</p>
+</ng-template>
+<hr>
+
+<!-- Direttiva Strutturale ngFor -->
+<h3>ngFor</h3>
+<!-- Ciclo For di Array -->
+<p *ngFor="let name of myNames">{{name}}</p>
+<!-- Ciclo For di Oggetti -->
+<p *ngFor="let obj of myObjects">{{obj.nome}} {{obj.cognome}} {{obj.eta}}</p>
+<hr>
+
+<h3>
+    ngSwitch
+</h3>
+
+
+
+<h3>ngStyle</h3>
+
+<input type="cikir" #myCol>
+<input [(ngModel)]="mySize" type="range">
+<p [(ngStyle)]="{'color': myCol.value, 'font-size: mySize+'px'}">
+    testo con style ngStyle
+</p>
