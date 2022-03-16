@@ -1,0 +1,48 @@
+
+
+<div class="container">
+    <form #myForm="ngForm" (ngSubmit)="inviaTemplateForm()" >
+        <div *ngIf="logged!=null">
+            <div *ngIf="logged.log=='Si'" class="alert alert-success" role="alert">
+                Utente Loggato con successo!
+            </div>
+            <div *ngIf="logged.log=='No'|| logged==null" class="alert alert-danger" role="alert">
+                Utente Non Loggato!
+            </div>
+        </div>
+
+        <div >
+            <h2>Welcome!</h2>
+            <p>Integer Posuere erat a anate venenatis dapibus posuere velit aliquet.</p>
+        </div>
+        
+        <h2>{{title}}</h2>
+        <div class="mb-3">
+            <label for="formControlInput1" class="form-label">Nome</label><br>
+            <input class="form-control" id="formControlInput1" type="text" name="nome" [(ngModel)]="nome" #myNome="ngModel" required placeholder="username">
+        </div>
+        <div class="mb-3">
+            <label for="formControlInput2" class="form-label">Password</label><br>
+            <input class="form-control" id="formControlInput2" rows="3" type="number" name="pw" [(ngModel)]="pw" #myPw="ngModel" required>  
+        </div>
+
+        <button class="btn btn-primary" type="submit">Invia</button>
+        <a class="mx-2 btn btn-danger" type="click" (click)="open(content)">Logout</a>
+    </form>
+</div>
+
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Attento!</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+      <p>Sei sicuro di voler fare il logout?</p>
+    </div>
+    <div class="modal-footer">        
+        <button type="button" class="btn btn-primary" (click)="logoutUtente()" (click)="c('Save click')">Si</button>
+        <button type="button" class="btn btn-danger" (click)="c('Save click')">No</button>
+    </div>
+  </ng-template>
+  

@@ -1,0 +1,14 @@
+<h3>{{title}}</h3>
+
+<div id="login_response" *ngIf="logged==null">
+    <h3>Login RESPONSE</h3>
+    <p>Devi effettuare il Login!</p>
+</div>
+
+<div *ngFor="let u of allUsers " >
+    <div *ngIf="logged.nome==u.nome">
+        <img src="{{imageUrl}}{{u.immagine}}.png" alt="">
+        <h3>{{u.nome}} {{u.cognome}}</h3>
+        <h5>{{u.motto}}</h5>
+    </div>
+</div>

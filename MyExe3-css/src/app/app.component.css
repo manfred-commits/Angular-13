@@ -1,0 +1,19 @@
+nav{
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+nav a{
+    width: 100%;
+    text-align: center;
+}
+#main_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#router_output{
+    width: 75%;
+    display: flex;
+}
