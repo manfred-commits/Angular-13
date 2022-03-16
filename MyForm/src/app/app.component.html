@@ -1,0 +1,23 @@
+<h1>{{title}}</h1>
+
+<form #myForm="ngForm" (ngSubmit)="inviaTemplateForm()" >
+  <label>Nome</label><br>
+  <input type="text" name="username" [(ngModel)]="username" #myNome="ngModel" required>  <br>
+  <label>Password</label><br>
+  <input type="number" name="password" [(ngModel)]="password" #myPw="ngModel" required>  
+  <button type="submit">Invia</button>
+</form>
+<div id="login_response" *ngIf="logged!=null">
+  <h3>Login RESPONSE</h3>
+  <p>nome: {{logged.username}} <br> id: {{logged.id}}</p>
+  <p>tipo: {{logged.type}}</p>
+  <p>token: {{logged.token}}</p>
+  <p>mail: {{logged.email}} userRole: {{logged.roles}}</p>
+  <p>expirationTime: {{logged.expirationTime}}</p>
+</div>
+<button type="submit" (click)="inviaTemplateUserForm()">Lista Users</button>
+<ul *ngIf="users!=null">
+  <li *ngFor="let u of users ">{{u.nome}} {{u.cognome}}</li>
+</ul>
+<hr>
+
