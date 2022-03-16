@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+
+<form #myForm="ngForm" (ngSubmit)="inviaTemplateForm()" >
+  <label>Nome</label><br>
+  <input type="text" name="nome" [(ngModel)]="nome" #myNome="ngModel" required>  <br>
+  <label>Password</label><br>
+  <input type="number" name="pw" [(ngModel)]="pw" #myPw="ngModel" required>  
+  <button type="submit">Invia</button>
+</form>
+<div id="login_response" *ngIf="logged!=null">
+  <h3>Login RESPONSE</h3>
+  <p>utente di nome: {{logged.nome}}</p>
+</div>
+<ng-container *ngIf="users!=null">
+  <h2>Utenti</h2>
+  <ul>
+    <li *ngFor="let u of users ">{{u.nome}}</li>
+  </ul>
+</ng-container>
+
+<hr>
