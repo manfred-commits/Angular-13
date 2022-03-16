@@ -12,7 +12,7 @@ export class LoginComponentComponent implements OnInit {
 
   title='My Login';
   nome:string='';
-  pw:number=0;
+  pw:any;
   urlLogin = 'https://ugobetori.it/_notes/api-test/angular/angular2/login.php';
   logged:any;
   users:any;
