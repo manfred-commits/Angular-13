@@ -1,0 +1,14 @@
+<h2>{{title}}</h2>
+<hr>
+<p> {{numeroParent}}</p>
+<!-- Chiama il metodo contenete l'Output EventEmitter -->
+
+
+
+<app-child 
+[inputChild]='stringaParent'
+(outputChild)='onOutputParent($event)'
+#childReference></app-child>
+
+<button (click)='childReference.apriAlert(" via Parent Reference " + childReference.title)'>Child Reference</button>
+<button (click)='cambiaViewChild()'>View Child </button><br>
