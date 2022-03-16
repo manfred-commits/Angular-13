@@ -1,0 +1,13 @@
+#container_network{
+    display: flex;
+    flex-wrap: wrap;
+}
+#container_network ul{
+    list-style: none;
+}
+#container_network h2{
+    width: 100%;
+}
+#container_network .network_description{
+    width: 50%;
+}
