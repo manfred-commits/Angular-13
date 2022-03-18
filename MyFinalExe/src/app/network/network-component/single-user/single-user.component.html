@@ -1,0 +1,11 @@
+<h3>{{title}}</h3>
+<div id="login_response">
+    <ng-container *ngIf="users!=null">
+        <h2>Utenti</h2>
+        <div >
+            <img src="{{imageUrl}}{{myUserImageIdentifier}}.jpg" alt="">
+            <h3>{{myEstrapolatedUser.nome}} {{myEstrapolatedUser.cognome}}</h3>
+            <h5>{{myEstrapolatedUser.email}}</h5>
+        </div> 
+    </ng-container>
+</div>

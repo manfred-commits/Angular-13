@@ -1,0 +1,19 @@
+<h2>{{title}}</h2>
+<form #myForm="ngForm" (ngSubmit)="inviaTemplateForm()">
+    <label>Username</label><br>
+    <input type="text" name="username" [(ngModel)]="username" #myUsername="ngModel" required placeholder="username">  <br>
+    <label>email</label><br>
+    <input type="text" name="email" [(ngModel)]="email" #myEmail="ngModel" required placeholder="email"><br>
+    <label>Password</label><br>
+    <input type="number" name="password" [(ngModel)]="password" #myPasword="ngModel" required> <br>
+    <label>role</label><br>
+    <select name="role" [(ngModel)]="role" #myRole="ngModel"  required>
+        <option value="admin">admin</option>
+        <option value="user">user</option>
+    </select><br>
+    <label>nome</label><br>
+    <input type="text" name="nome" [(ngModel)]="nome" #myNome="ngModel" required placeholder="nome"> <br>
+    <label>cognome</label><br>
+    <input type="text" name="cognome" [(ngModel)]="cognome" #myCognome="ngModel" required placeholder="cognome"><br>
+    <button type="submit">Invia</button>
+</form>

@@ -1,0 +1,14 @@
+
+<ng-container>
+    <h2>Utente {{username}}</h2>
+    <ul>
+        <li *ngFor="let n of notes; let i = index">
+            <h3>{{n.testoNota}}</h3>
+            <button (click)="removeNote(n.id)">Delete Note</button>
+        </li>
+        <li>
+            <input type="text" name="testoNota" [(ngModel)]="testoNota" #myTestoNota="ngModel" required placeholder="testoNota">
+            <button (click)="addNote()">Aggiungi nota</button>
+        </li>
+    </ul>
+</ng-container>

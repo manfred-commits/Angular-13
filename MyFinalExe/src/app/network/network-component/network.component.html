@@ -1,0 +1,21 @@
+<h2>{{title}}</h2>
+<div>
+    <div id="login_response">
+        <ng-container *ngIf="users!=null">
+            <h2>Utenti</h2>
+            <ul>
+                <li *ngFor="let u of users; let i = index">
+                    <a routerLink="single-user" (click)="getIdentifier(u.username,i)">
+                        <img src="{{imageUrl}}{{i+1}}.jpg" alt="">
+                        <h3>{{u.nome}} {{u.cognome}}</h3>
+                        <h5>{{u.email}}</h5>
+                    </a>
+                </li>
+            </ul>
+        </ng-container>
+    </div>
+    <hr>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

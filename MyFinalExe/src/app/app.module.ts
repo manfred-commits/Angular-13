@@ -3,21 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GlobalService } from './global.service';
 import { LoginModule } from './login/login.module';
-import { MyGlobalService } from './my-global.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterModule } from './register/register.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     LoginModule,
-    NgbModule
+    RegisterModule,
+    HttpClientModule
   ],
-  providers: [MyGlobalService],
+  providers: [GlobalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
